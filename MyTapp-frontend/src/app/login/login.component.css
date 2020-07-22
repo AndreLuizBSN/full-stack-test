@@ -1,0 +1,29 @@
+.login-tela{
+  background: url(src\assets\login-back.jpg) 100% no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-color: (0,0,0,.5)
+}
+
+.login-tela img{
+  width: 150px;
+}
+
+form {
+    padding: 10px;
+    opacity: 1;
+    border-radius: 5px;
+    margin: 0px auto;
+    width: 210px;
+    padding-top: 135px;
+}
+
+form label {
+  color: #fff;
+  text-shadow: 0 0 4px #000000;
+}
+
+form button {
+  box-shadow: 0 0 4px #595959;
+  background: #595959;
+}

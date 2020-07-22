@@ -1,0 +1,24 @@
+<div class="login-tela">
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <img src="./assets/beer.png" alt="">
+    <div>
+      <label for="email">
+        E-Mail
+      </label>
+      <input id="email" type="text" formControlName="email">
+    </div>
+
+    <div>
+      <label for="password">
+        Pass
+      </label>
+      <input id="password" type="password" formControlName="password">
+    </div>
+
+    <button class="button" type="submit">Login</button>
+
+  </form>
+
+</div>

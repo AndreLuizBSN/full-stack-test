@@ -1,0 +1,135 @@
+<div class="content">
+  <div class="title-div">
+    <h3>{{beer.name}}</h3>
+    <span>{{beer.tagline}}</span>
+  </div>
+  <div class="complete-div">
+    <div class="image dual-div">
+      <img src="{{beer.image_url}}" alt="">
+    </div>
+    <div class="info-init dual-div">
+      <div class="info contributed_by">
+        <span>Contributed by</span>
+        <p>{{beer.contributed_by}}</p>
+      </div>
+      <div class="info first_brewed">
+        <span>First Brewed</span>
+        <p>{{beer.first_brewed}}</p>
+      </div>
+      <div class="info ebc-content">
+        <span>EBC(0 - 80)</span>
+        <div class="ebc">
+          <div class="ebc-level">
+            {{this.beer.ebc}}
+          </div>
+        </div>
+      </div>
+      <div class="info srm-content">
+        <span>SRM(0 - 40)</span>
+        <div class="srm">
+          <div class="srm-level">
+            {{this.beer.srm}}
+          </div>
+        </div>
+      </div>
+      <div class="info abv-content">
+        <span>ABV(0 - 25)</span>
+        <div class="abv">
+          <div class="abv-level">
+            {{this.beer.abv}}
+          </div>
+        </div>
+      </div>
+      <div class="info ibu-content">
+        <span>IBU(0 - 200)</span>
+        <div class="ibu">
+          <div class="ibu-level">
+            {{this.beer.ibu}}
+          </div>
+        </div>
+      </div>
+      <div class="info ph-content">
+        <span>PH(0 - 13.5)</span>
+        <div class="ph">
+          <div class="ph-level">
+            {{this.beer.ph}}
+          </div>
+        </div>
+      </div>
+      <div class="info at-content">
+        <span>Attenuation Level(0 - 100)</span>
+        <div class="at">
+          <div class="at-level">
+            {{this.beer.attenuation_level}}
+          </div>
+        </div>
+      </div>
+      <div class="info description">
+        <span>Description</span>
+        <p>{{beer.description}}</p>
+      </div>
+      <div class="info brewers_tips">
+        <span>Brewers Tips</span>
+        <p>{{beer.brewers_tips}}</p>
+      </div>
+      <div class="info volume">
+        <span>Volume</span>
+        <p>{{beer.volume.value}} {{beer.volume.unit}}</p>
+      </div>
+      <div class="info volume">
+        <span>Boil Volume</span>
+        <p>{{beer.boil_volume.value}} {{beer.boil_volume.unit}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="title-div">
+    <h3>More About</h3>
+  </div>
+  <div style="width: 100%;">
+    <h4>Ingredients</h4>
+    <p>{{beer.ingredients.yeast}}</p>
+    <h5>Hops</h5>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Add</th>
+        <th>Amount</th>
+        <th>Attribute</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hop of beer.ingredients.hops">
+          <td>{{hop.name}}</td>
+          <td>{{hop.add}}</td>
+          <td>{{hop.amount.value}} {{hop.amount.unit}}</td>
+          <td>{{hop.attribute}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h5>Malt</h5>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Amount</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let malt of beer.ingredients.malt">
+          <td>{{malt.name}}</td>
+          <td>{{malt.amount.value}} {{malt.amount.unit}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Fermentation: {{beer.method.fermentation.temp.value}} {{beer.method.fermentation.temp.unit}}</p>
+    <h5>Mash Temp</h5>
+    <p *ngFor="let mash of beer.method.mash_temp">Duration {{mash.duration}} -> {{mash.temp.value}} {{mash.temp.unit}}</p>
+
+    <hr>
+
+    <h4>Foods</h4>
+
+    <ul>
+      <li *ngFor="let food of beer.food_pairing">{{food}}</li>
+    </ul>
+  <div>
+</div>

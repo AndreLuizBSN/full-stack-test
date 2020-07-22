@@ -1,0 +1,75 @@
+<div class="show-filters form-submit">
+  <button type="button" name="button" (click)='showFilters()' id="show-filters-btn">Show Filters</button>
+</div>
+
+<div class="filters">
+  <div class="form-block">
+    <label for="">Name</label>
+    <input type="text" id="beer_name" placeholder="Ex: Weisse">
+  </div>
+  <div class="form-block">
+    <label for="">Yeast</label>
+    <input type="text" id="yeast" placeholder="Ex: Wyeast 1056 - American Ale">
+  </div>
+  <div class="form-block">
+    <label for="">Hops</label>
+    <input type="text" id="hops" placeholder="Ex: Bramling Cross">
+  </div>
+  <div class="form-block">
+    <label for="">ABV</label>
+    <input type="number" id="abv_gt" placeholder="Greater: ex: 1.1" min="0" max="100" class="half-input">
+    <input type="number" id="abv_lt" placeholder="Less: ex: 4.1" min="0" max="100" class="half-input">
+  </div>
+  <div class="form-block">
+    <label for="">IBU</label>
+    <input type="number" id="ibu_gt" placeholder="Greater: ex: 10" min="0" max="3000" class="half-input">
+    <input type="number" id="ibu_lt" placeholder="Less: ex: 80" min="0" max="3000" class="half-input">
+  </div>
+  <div class="form-block">
+    <label for="">EBC</label>
+    <input type="number" id="ebc_gt" placeholder="Greater: ex: 4" min="0" max="100" class="half-input">
+    <input type="number" id="ebc_lt" placeholder="Less: ex: 70" min="0" max="100" class="half-input">
+  </div>
+  <div class="form-block">
+    <label for="">Brewed before</label>
+    <input type="month" id="brewed_before" placeholder="Greater: ex: 04/2000">
+  </div>
+  <div class="form-block">
+    <label for="">Brewed after</label>
+    <input type="month" id="brewed_after" placeholder="Less: ex: 12/2018">
+  </div>
+  <div class="form-block">
+    <label for="">Malt</label>
+    <input type="text" id="malt" placeholder="Ex: Propino Pale Malt">
+  </div>
+  <div class="form-block">
+    <label for="">Food</label>
+    <input type="text" id="food" placeholder="Ex: Miso ramen">
+  </div>
+  <div class="form-submit">
+    <button type="button" name="button" (click)="applyFilters()">Search</button>
+  </div>
+</div>
+<div class="content" *ngIf="hasRegisters">
+  <a class="beer-item" *ngFor="let beer of beers" routerLink="/beer/{{beer.id}}">
+    <h4>{{beer.name}}</h4>
+    <span class="f-r-alcool">{{beer.abv}} %</span>
+    <div class="beer-img">
+      <img src="{{beer.image_url}}" alt="">
+    </div>
+    <div class="block-info">
+      <span class="info-ph">PH {{beer.ph}}</span>
+      <span class="info-ibu">IBU {{beer.ibu}}</span>
+      <span class="info-ebc {{beer.ebc_class}}">EBC {{beer.ebc}}</span>
+    </div>
+  </a>
+</div>
+
+<div class="content" *ngIf="!hasRegisters">
+  <h1>No records</h1>
+</div>
+
+<div class="navigation">
+  <button type="button" name="button" id="btn-back" (click)="navigation(false)">< Back</button>
+  <button type="button" name="button" id="btn-next" (click)="navigation(true)">Next ></button>
+</div>

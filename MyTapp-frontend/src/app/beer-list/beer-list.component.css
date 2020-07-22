@@ -1,0 +1,150 @@
+.content {
+  text-align: center;
+}
+
+.beer-item {
+  width: 250px;
+  height: 400px;
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid rgba(0,0,0,.5);
+  border-radius: 5px;
+}
+
+.beer-item h4{
+  margin: 0px 30px 0 0;
+  padding: 0px;
+  color: #595959;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  overflow: hidden;
+  height: 14px;
+}
+
+.beer-item .f-r-alcool{
+  float: right;
+  margin-top: -20px;
+  color: #fff;
+  font-size: 11px;
+  background: #595959;
+  padding: 2px;
+  margin-right: -5px;
+  border-radius: 0px 3px 0px 5px;
+}
+
+.beer-item .beer-img{
+  height: 350px;
+  display: block;
+  text-align: center;
+}
+
+.beer-item .beer-img img{
+  height: 100%;
+}
+
+.beer-item .block-info{
+  display: flex;
+  width: 243px;
+}
+
+.beer-item .block-info span{
+  width: 34%;
+  padding: 9px;
+  font-size: 10px;
+  margin-bottom: 1px;
+}
+
+.beer-item .block-info .info-ph{
+  background: #c3c3c3;
+  margin-left: -5px;
+  border-radius: 0px 0px 0px 3px;
+}
+
+.beer-item .block-info .info-ebc{
+  margin-right: -5px;
+  border-radius: 0px 0px 3px 0px;
+}
+
+.ebc-1{background-color: #FDE84F;}
+.ebc-2{background-color: #FDD126;}
+.ebc-3{background-color: #FEB800;}
+.ebc-4{background-color: #F99F00;}
+.ebc-5{background-color: #FDE84F;}
+.ebc-6{background-color: #EF8B01;}
+.ebc-7{background-color: #E17A03;}
+.ebc-8{background-color: #D36600;}
+.ebc-9{background-color: #C85900;}
+.ebc-10{background-color: #B64A02;}
+.ebc-11{background-color: #AC3E03;color:#fff;}
+.ebc-12{background-color: #A33502;color:#fff;}
+.ebc-13{background-color: #922602;color:#fff;}
+.ebc-14{background-color: #8D1F04;color:#fff;}
+.ebc-15{background-color: #7A1304;color:#fff;}
+.ebc-16{background-color: #710C02;color:#fff;}
+.ebc-17{background-color: #690D00;color:#fff;}
+.ebc-18{background-color: #580801;color:#fff;}
+.ebc-19{background-color: #530802;color:#fff;}
+.ebc-20{background-color: #440B00;color:#fff;}
+.ebc-21{background-color: #3E0E00;color:#fff;}
+
+.filters {
+  display: none;
+  padding: 15px;
+  text-align: center;
+  background: #e0e0e0;
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius: 5px;
+}
+.filters .form-block{
+  display: inline-block;
+  margin-right: 10px;
+  width: 290px;
+  text-align: left;
+}
+
+.filters .form-block input {
+  width: 100%;
+}
+
+.filters .form-block .half-input {
+  width: 49%;
+  margin-right: 2px;
+}
+.form-submit {
+  border-top: 1px solid rgba(0,0,0,.1);
+  padding: 5px 0;
+  text-align: right;
+}
+.form-submit button{
+  width: 100%;
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  background: #505050;
+}
+
+.navigation {
+  border-top: 1px solid rgba(0,0,0,.1);
+  padding: 15px;
+  margin: 15px;
+  height: 70px;
+}
+
+.navigation button {
+  font-size: 20px;
+  background: #3e3e3e;
+  padding: 15px;
+  width: 120px;
+  text-align: center;
+  display: block;
+}
+
+.navigation #btn-back {
+  float: left;
+}
+
+.navigation #btn-next {
+  float: right;
+}
