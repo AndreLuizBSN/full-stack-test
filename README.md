@@ -1,10 +1,23 @@
 # MyTapp - Test André Luiz Alexandrini
+## Técnologias
+NPM versão 6.14.6
+Node versão 12.18.3
+PostgreSQL 12
+Projeto criado em ambiente Windows.
+
 ## Banco de dados
-Para o projeto, conforme descrito no teste, utilizei o PostgreSQL. O banco está na pasta de Banco de Dados dentro do repositório git.
-Caso não queira utilizar o banco de dados que está no repositório, basta seguir até a sessão de Migrations
+Para o projeto, conforme descrito no teste, utilizei o PostgreSQL versão 12(última do para download -> utilizei a versão do Windows Installer baixada do site oficial do PostgreSQL - https://www.postgresql.org/). O banco para ser restaurado está na pasta de **Banco de Dados** dentro do repositório git.
+Caso não queira utilizar o banco de dados que está no repositório, basta seguir até a sessão de Migrations.
+
 ## BackEnd
 ### Introdução
 Utilizei o AdonisJS como FrameWork para criar a aplicação. É uma framework bastante completa, e muito semelhante ao Laravel do PHP.
+
+### Instalação base para rodar o backend
+Inicialmente, execute o comando abaixo para instalar o AdonisJS e poder executar os comandos a partir dele.
+```sh
+$ npm i -g @adonisjs/cli
+```
 
 ### Configuração de ambiente
 A configuração de IP, Porta, dados do banco estão no arquivo **.env** disponível na raíz do projeto
@@ -29,8 +42,10 @@ HASH_DRIVER=bcrypt
 $ npm i
 ```
 ### Migration
-Somente caso não tenha restaurado a base de dados que está no repositório.
-Primeiramente, deve-se criar um banco de dados novo com o nome mytapp, conforme está descrito na sessão **Configuração de ambiente** em **DB_DATABASE=mytapp**. Logo após, execute o comando abaixo. Irá criar toda a estrutura de tabelas do sistema(a estrutura fica no repositório da aplicação `database\migrations`). Executar essa ação na raíz do projeto.
+Utilizar essa sessão somente no caso de não ter restaurado a base de dados que está no repositório.
+O passo a passo é o seguinte:
+* Primeiramente, deve-se criar um banco de dados novo com o nome **mytapp** no PostgreSQL, conforme está descrito na sessão **Configuração de ambiente** em **DB_DATABASE=mytapp**.
+* Após, execute o comando abaixo. Irá criar toda a estrutura de tabelas do sistema(a estrutura fica no repositório da aplicação `database\migrations`). Executar essa ação na raíz do projeto.
 ```sh
 $ adonis migration:run
 ```
@@ -100,7 +115,7 @@ Result HTTP 200
 Result HTTP 401
 {}
 ```
-#### Informação rápidao do usuário
+#### Informação rápida do usuário
 ```sh
 GET http://server:port/v1/me
 header
@@ -171,7 +186,7 @@ Result HTTP 200
 Result HTTP 401
 {}
 ```
-#### Inserção de usuário com usuário atenticado
+#### Inserção de usuário com usuário autenticado
 ```sh
 POST http://server:port/v1/users
 body JSON
@@ -206,7 +221,7 @@ Result HTTP 400
   ]
 }
 ```
-#### Alteração de usuário com usuário atenticado
+#### Alteração de usuário com usuário autenticado
 ```sh
 PUT http://server:port/v1/users/{id}
 body JSON
@@ -235,7 +250,7 @@ Result HTTP 400
   ]
 }
 ```
-#### Exclusão de usuário com usuário atenticado
+#### Exclusão de usuário com usuário autenticado
 ```sh
 DELETE http://server:port/v1/users/{id}
 
@@ -247,7 +262,7 @@ Result HTTP 404
 
 ### Endpoints(Beers)
 #### All Beers(25 per page)
-É possível passar os parâmetros conforme está no manual https://punkapi.com/documentation/v2 em parâmetros. As parâmetros são passados como query também nesse sistema da mesma forma.
+É possível passar os parâmetros conforme está no manual **https://punkapi.com/documentation/v2**. As parâmetros são passados como query também nesse sistema da mesma forma.
 ```sh
 GET http://server:port/v1/beers
 
@@ -281,13 +296,27 @@ Result HTTP 401
 
 ## Frontend
 
-Para executar em ambiente de testes, basta executar o comando
+### introdução
+Está Configurado nos arquivos **environment.prod.ts** e **environment.ts** dentro do diretório **src\environments** do projeto Frontend o caminho para a API. Caso tenha alterado a porta ou o endereço do servidor, se faz necessário configurar esses 2 arquivos para execução dos comandos descritos na próxima sessão.
+
+### Execução
+Para instalar as dependencias do projeto, execute o comando
+```sh
+$ npm i
+```
+
+Para executar em ambiente de testes, basta executar o comando abaixo. Irá executar no endereço **http://localhost:4200**.
 ```sh
 $ npm start
 ```
 
 Para gerar um build em produção do frontend, basta executar o comando abaixo que ficará disponível na pasta **dist** os arquivos compilados.
 ```sh
-$ npm build
+$ ng build
 ```
-O login e senha para acesso serão os definidos no backend.
+Em minha maquina eu executei o build usando um aplicativo chamado **miniweb** que disponibilizei para downloado no endereço **https://drive.google.com/file/d/1RT5CHcN_IZ8KS6ZbPdrPSYPYZPzHLkUX/view?usp=sharing**. Para utilizar o aplicativo que disponibilizei(caso desejar), basta colocar o conteúdo da pasta **dist** gerado pelo build dentro da pasta **htdocs**.
+
+O login e senha para acesso serão os definidos no backend na sessão de registro de usuário(cadastro).
+
+# Considerações finais
+Para testar todo as sessões citadas acima, criei uma VM com Windows 10, efetuei a instalação do NPM e Node baixados diretamente do site **https://nodejs.org/pt-br/download/**, efetuei a instalação do PostgreSQL do site Descrito na sessão **Banco de Dados**. Instalei também para testar os Endpoints o **insomnia** no link **https://insomnia.rest/download/core/** (que considero uma excelente ferramenta)
