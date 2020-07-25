@@ -297,7 +297,10 @@ Result HTTP 401
 ## Frontend
 
 ### introdução
-Está Configurado nos arquivos **environment.prod.ts** e **environment.ts** dentro do diretório **src\environments** do projeto Frontend o caminho para a API. Caso tenha alterado a porta ou o endereço do servidor, se faz necessário configurar esses 2 arquivos para execução dos comandos descritos na próxima sessão.
+Está Configurado nos arquivos **environment.prod.ts** e **environment.ts** dentro do diretório **src\environments** do projeto Frontend o caminho para a API. Caso tenha alterado a porta ou o endereço do servidor, se faz necessário configurar esses 2 arquivos para execução dos comandos descritos na próxima sessão. Inicialmente, instale usando o comando o executor do angular:
+```sh
+$ npm i -g @angular/cli
+```
 
 ### Execução
 Para instalar as dependencias do projeto, execute o comando
